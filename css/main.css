@@ -1,0 +1,444 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: #f4f4f4;
+    transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -ms-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+}
+
+body.darkLight {
+    background-color: rgb(23, 23, 23);
+}
+
+.coll-nav {
+    background-color: black;
+    width: 100%;
+}
+
+.coll-nav .logname {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0d4381;
+}
+
+.coll-nav .logname .logo {}
+
+.coll-nav .logname .logo img {
+    width: 33px;
+    height: 33px;
+    object-fit: cover;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+}
+
+.coll-nav .logname .name-site {
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.coll-nav .logname .name-site p>span:nth-child(1) {
+    color: red;
+    font-size: 25px;
+}
+
+.coll-nav .logname .name-site p>span:nth-child(2) {
+    font-size: 20px;
+}
+
+.coll-nav .logname .loredl {}
+
+.coll-nav .logname .loredl .ulloredl {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.coll-nav .logname .loredl .ulloredl li {
+    padding: 5px;
+    position: relative;
+}
+
+.coll-nav .logname .loredl .ulloredl li>span {
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.coll-nav .logname .loredl .ulloredl .userli {
+    position: relative;
+}
+
+.coll-nav .logname .loredl .ulloredl .userli>.userdarlig {
+    position: absolute;
+    width: max-content;
+    padding: 10px;
+    background-color: #14213d;
+    right: 0px;
+    z-index: 100;
+    top: 45px;
+    display: none;
+}
+
+.coll-nav .logname .loredl .ulloredl .userli>.opemenudu {
+    display: flex;
+}
+.coll-nav .logname .loredl .ulloredl .cartli #shoppingcart {
+    position: relative;
+}
+.coll-nav .logname .loredl .ulloredl .cartli #shoppingcart .count-cart{
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: black;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+body.darkmode {
+    background-color: #0a0908;
+}
+
+.darklight {
+    width: 90px;
+    height: 40px;
+    background-color: black;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.darklight .toggledarklight {
+    background-color: wheat;
+    border-radius: 20px;
+    width: 80px;
+    padding: 2px;
+    height: 30px;
+    transition: 0.5s ease-in;
+    display: flex;
+    align-items: center;
+}
+
+body.darkmode .darklight .toggledarklight {
+    background-color: rgb(79, 74, 74);
+}
+
+.darklight .toggledarklight .SuMo {
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease-in-out;
+}
+
+body.darkmode .darklight .toggledarklight .SuMo {
+    background-color: rgb(95, 87, 87);
+}
+
+.darklight .toggledarklight .SuMo i.fa-moon {
+    display: block;
+    transition: 0.5s;
+}
+
+body.darkmode .darklight .toggledarklight .SuMo i.fa-moon {
+    display: none;
+    transition: 0.5s;
+}
+
+.darklight .toggledarklight .SuMo i.fa-sun {
+    display: none;
+}
+
+body.darkmode .darklight .toggledarklight .SuMo i.fa-sun {
+    display: block;
+    color: yellow;
+}
+
+body.darkmode .darklight .toggledarklight .SuMo {
+    transform: translate(55px);
+
+}
+/* logout */
+.logout{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logout button{
+    width: 80px;
+    height: 25px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #b5abab;
+    color: white;
+    font-family: 'Font Awesome 6 Brands';
+}
+/* toogle menu */
+.coll-nav .mainheader .toogle {
+    margin: 1px;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: black;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    display: none;
+}
+
+.coll-nav .mainheader .toogle span {
+    width: 80%;
+    height: 2px;
+    background-color: red;
+    position: absolute;
+    z-index: 1;
+
+}
+
+.coll-nav .mainheader .toogle span:nth-child(1) {
+    width: 80%;
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transition: 0.5s ease-in-out;
+    -o-transform: translateY(-10px);
+}
+
+.coll-nav .mainheader .toogle span:nth-child(2) {
+    width: 80%;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.coll-nav .mainheader .toogle span:nth-child(3) {
+    width: 80%;
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    transition: 0.5s ease-in-out;
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
+}
+
+.coll-nav .mainheader .toogle.activemenu span:nth-child(1) {
+    width: 80%;
+    transform: translateY(0px) rotate(-220deg);
+    -webkit-transform: translateY(0px) rotate(-220deg);
+    -moz-transform: translateY(0px) rotate(-220deg);
+    -ms-transform: translateY(0px) rotate(-220deg);
+    -o-transform: translateY(0px) rotate(-220deg);
+}
+
+.coll-nav .mainheader .toogle.activemenu span:nth-child(2) {
+    width: 80%;
+    transform: translatex(-1020%);
+    -webkit-transform: translatex(-1020%);
+    -moz-transform: translatex(-1020%);
+    -ms-transform: translatex(-1020%);
+    transition: 0.2s ease-in-out;
+    -o-transform: translatex(-1020%);
+}
+
+.coll-nav .mainheader .toogle.activemenu span:nth-child(3) {
+    width: 80%;
+    transform: translateY(0px) rotate(220deg);
+    -webkit-transform: translateY(0px) rotate(220deg);
+    -moz-transform: translateY(0px) rotate(220deg);
+    -ms-transform: translateY(0px) rotate(220deg);
+    -o-transform: translateY(0px) rotate(220deg);
+}
+
+/* end toggle menu */
+/* ul menu */
+.coll-nav .mainheader {
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(24 84 152);
+}
+
+.coll-nav .mainheader .ulmenu {
+    position: relative;
+}
+
+.coll-nav .mainheader .ulmenu .ulmenuul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.coll-nav .mainheader .ulmenu .ulmenuul>li {
+    padding: 5px;
+}
+.coll-nav .mainheader .ulmenu .ulmenuul li.alllinks > a {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.coll-nav .mainheader .ulmenu .ulmenuul li.alllinks > a > .alllinkic{
+    font-family: cursive;
+    margin-left: 5px;
+}
+.coll-nav .mainheader .ulmenu .ulmenuul>li>a {
+    color: white;
+    padding: 5px;
+}
+
+
+/* footer */
+.footer {
+    position: relative;
+    background-color: #05182e;
+}
+
+.footer .collfotter {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    flex-wrap: nowrap;
+}
+
+.footer .collfotter .section {
+    position: relative;
+}
+
+.footer .collfotter .section h2 {
+    font-family: cursive;
+    color: white;
+}
+
+.footer .collfotter .section>ul {}
+
+.footer .collfotter .section>ul>li,
+a {
+    color: rgb(168, 163, 163);
+}
+
+.footer .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 20px;
+    font-family: cursive;
+}
+
+@media screen and (max-width:750px) {
+    .coll-nav .logname .logo {
+        display: none;
+    }
+
+    .coll-nav .logname .name-site p>span:nth-child(1) {
+        font-size: 4vw;
+    }
+
+    .coll-nav .logname .name-site p>span:nth-child(2) {
+        font-size: 3vw;
+
+    }
+
+    .coll-nav .logname .loredl .ulloredl li>span {
+        font-size: 3vw;
+    }
+
+    .coll-nav .mainheader .ulmenu .ulmenuul>li>a {
+        font-size: 3vw;
+    }
+
+    .footer .collfotter {
+        flex-direction: column;
+    }
+.footer .collfotter .section h2 {
+    font-size: 5vw;
+}
+.footer .collfotter .section>ul>li,
+a{
+    font-size: 2vw;
+}
+}
+
+@media screen and (max-width:550px) {
+    .coll-nav .mainheader .ulmenu .ulmenuul>li>a {
+        font-size: 2.4vw;
+    }
+}
+/*  */
+.errormsg{
+    width: max-content;
+    padding: 20px;
+    position: fixed;
+    top: 57px;
+    right: 0px;
+    z-index: 1000;
+    background: black;
+    color: white;
+}
+.errormsg span {
+    display: flex
+;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    /* background: #716b6b; */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.errormsg::after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 5px;
+    background-color: red;
+    animation:  3s linear 1 forwards;
+    -webkit-animation: TimeOut 3s linear 1 forwards;
+}
+@keyframes TimeOut {
+    to{
+        width: 0px;
+    }
+}

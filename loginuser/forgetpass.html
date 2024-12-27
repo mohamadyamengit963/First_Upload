@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget Password</title>
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+</head>
+
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .image-logo {
+            position: absolute;
+            top: 0px;
+            box-sizing: border-box;
+        }
+
+        .image-logo img {
+            width: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+
+        .coll-forgetpass {
+            width: 400px;
+            margin: auto;
+            position: relative;
+        }
+
+        .coll-forgetpass h3 {
+            font-size: 30px;
+            font-family: cursive;
+            text-align: center;
+            width: max-content;
+            margin: auto;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            position: relative;
+            color: gray;
+        }
+
+        .coll-forgetpass h3::before {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            background-color: gray;
+            width: 100%;
+            height: 3px;
+        }
+
+        .coll-forgetpass .inf {
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .coll-forgetpass .inf p {
+            font-size: 20px;
+            color: black;
+            text-shadow: -1px 1px 1px black;
+        }
+
+        .coll-forgetpass form {
+            width: 100%;
+        }
+
+        .coll-forgetpass form .input {}
+
+        .coll-forgetpass form .input .icinput {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .coll-forgetpass form .input .icinput input {
+            width: 100%;
+            height: 35px;
+            padding-left: 25px;
+        }
+
+        .coll-forgetpass form .input .icinput input::-webkit-input-placeholder {
+            transition: 0.5s ease-in-out;
+        }
+
+        .coll-forgetpass form .input .icinput input:focus::-webkit-input-placeholder {
+            opacity: 0;
+        }
+
+        .coll-forgetpass form .input .icinput i {
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: gray;
+        }
+
+        .coll-forgetpass form .input-send button {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 35px;
+            border: none;
+            background-color: rgb(88, 88, 255);
+            font-size: 20px;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            /* pointer-events: none; */
+            user-select: none;
+            cursor: pointer;
+            pointer-events: none;
+        }
+
+        .coll-forgetpass form .likback {
+            width: max-content;
+            margin: 10px auto;
+        }
+
+        @media screen and (max-width:450px) {
+            .coll-forgetpass {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .coll-forgetpass h3 {
+                font-size: 4vw;
+            }
+
+            .coll-forgetpass .inf p {
+                font-size: 4vw;
+
+            }
+
+            .coll-forgetpass form .likback {
+                font-size: 3vw;
+            }
+
+            .coll-forgetpass form .input .icinput {
+                width: 80%;
+                margin: 10px auto;
+            }
+
+            .coll-forgetpass form .input .icinput input {
+                width: 100%;
+                font-size: 3vw;
+                height: 30px;
+            }
+
+            .coll-forgetpass form .input-send {
+                width: 80%;
+                margin: auto;
+            }
+
+            .coll-forgetpass form .input-send button {
+                width: 100%;
+                overflow: hidden;
+                font-size: 4vw;
+                display: flex;
+                height: 30px;
+            }
+        }
+    </style>
+    <div class="image-logo">
+        <img src="../image/logo.svg" alt="">
+    </div>
+    <div class="coll-forgetpass">
+        <h3>Forget Password</h3>
+        <div class="inf">
+            <p>
+                Enter Your E-mail Address Below We Will Send
+                <br>
+                Instructions To Reset Your Password
+            </p>
+        </div>
+        <form action="">
+            <div class="input">
+                <div class="icinput">
+                    <input type="email" name="" id="resemail" placeholder="Enter Your Valid E-mail" spellcheck="false"
+                        required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+            </div>
+            <style>
+                .loadSendCode {
+                    display: flex;
+                    gap: 10px;
+                    display: none;
+                }
+
+                .loadSendCode span {
+                    width: 15px;
+                    height: 15px;
+                    display: block;
+                    background-color: black;
+                    border-radius: 50%;
+                    transition: 0.5s ease-in-out;
+                    animation: scaleDotso 0.5s infinite linear;
+                    opacity: 0.5;
+                }
+
+                .loadSendCode span:nth-child(1) {
+                    animation: preloader .6s ease-in-out alternate infinite;
+                }
+
+                .loadSendCode span:nth-child(2) {
+                    animation: preloader .6s ease-in-out alternate .2s infinite;
+                }
+
+                .loadSendCode span:nth-child(3) {
+                    animation: preloader .6s ease-in-out alternate .4s infinite;
+                }
+
+                .loadSendCode span:nth-child(4) {
+                    animation: preloader .6s ease-in-out alternate .6s infinite;
+                }
+
+                .loadSendCode span:nth-child(5) {
+                    animation: preloader .6s ease-in-out alternate .7s infinite;
+                }
+
+                @keyframes preloader {
+                    100% {
+                        opacity: 1;
+                        transform: scale(1.1);
+                    }
+                }
+            </style>
+            <div class="input-send">
+                <button id="sendcode">
+                    <span id="text-btn">Send Code</span>
+                    <div id="load-btn" class="loadSendCode">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+            <div class="likback">
+                <a href="login.php">Back To LogIn</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        var sendcode = document.getElementById("sendcode");
+        var Email = document.getElementById("resemail");
+        var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        Email.addEventListener("keyup" , ()=>{
+            if(Email.value === "" ){
+                sendcode.style.pointerEvents = "none";
+            }
+             if(!Email.value.match(pattern)){
+                sendcode.style.pointerEvents = "none";
+            }
+             if(Email.value !== "" &&
+                Email.value.match(pattern)
+            ){
+                sendcode.style.pointerEvents = "all";
+
+            }
+        })
+        sendcode.addEventListener("click", (e) => {
+            e.preventDefault()
+            var Email = document.getElementById("resemail");
+            setTimeout(() => {
+                sendcode.style.pointerEvents = "none";
+                Email.style.pointerEvents = "none";
+                setTimeout(() => {
+                    document.getElementById("text-btn").style.display = "none";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("load-btn").style.display = "flex";
+                }, 350);
+                setTimeout(() => {
+                    document.getElementById("load-btn").style.display = "none";
+                }, 7000);
+                setTimeout(() => {
+                    function GenereatCode(lenght){
+                        const Character = "0123456789ABCDEFJHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxys";
+                        var randomeCode = "";
+                        for (let i = 0 ; i < lenght ; i++){
+                            randomeCode += Character.charAt(Math.floor(Math.random() * Character.length))
+                        }
+                        return randomeCode;
+                    }
+                    let ResetCode = GenereatCode(10);
+                    var ExpiresAT = new Date(new Date().getTime() + 600 * 1000).toISOString();
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "resetpass.php", true);
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.onload = function () {
+                        if (xhr.status === 200  ) {
+                            setTimeout(() => {
+                                document.getElementById("text-btn").style.display = "block";
+                                document.getElementById("text-btn").textContent = "Code Sent";
+                                console.log(xhr.responseText);
+                                setTimeout(() => {
+                                    /* window.location.href = "resetpass.php"; */
+                                }, 4500);
+                            }, 1000);
+                        } else {
+                            document.getElementById("text-btn").style.display = "block";
+                            document.getElementById("text-btn").textContent = "Error Try Again Later";
+                            setTimeout(() => {
+                                window.location.href = "forgetpass.html";
+                            }, 4500);
+                        }
+                    }
+                    xhr.send("email=" + encodeURIComponent(Email.value) + "&resetCode="  + encodeURIComponent(ResetCode) + "&expiredate=" + ExpiresAT);
+                }, 8000);
+                /*  
+                 setTimeout(() => {
+                     window.location.href = "resetpass.php";
+                 }, 5000); */
+                /* inside  */
+            }, 100);
+        })
+    </script>
+</body>
+
+</html>

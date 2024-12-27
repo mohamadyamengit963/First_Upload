@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قسم الأقسام</title>
+    <style>
+        body {
+            direction: rtl;
+            text-align: right;
+            font-family: Arial, sans-serif;
+        }
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            margin-right: 5px;
+            background-color: #f0f0f0;
+        }
+        .tab:hover {
+            background-color: #ddd;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab" onclick="showTabContent('men')">الرجال</div>
+        <div class="tab" onclick="showTabContent('women')">النساء</div>
+        <div class="tab" onclick="showTabContent('kids')">الأطفال</div>
+        <div class="tab" onclick="showTabContent('electronics')">الإلكترونيات</div>
+        <div class="tab" onclick="showTabContent('home')">المنزل</div>
+        <div class="tab" onclick="showTabContent('beauty')">الجمال</div>
+        <div class="tab" onclick="showTabContent('sports')">الرياضة</div>
+        <div class="tab" onclick="showTabContent('books')">الكتب</div>
+        <div class="tab" onclick="showTabContent('toys')">الألعاب</div>
+    </div>
+
+    <div id="content" class="tab-content">
+        <h2>المنتجات</h2>
+        <div id="products">اختر قسما لعرض المنتجات.</div>
+    </div>
+
+    <script>
+        function showTabContent(category) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'get_products.php?category=' + category, true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    document.getElementById('products').innerHTML = xhr.responseText;
+                } else {
+                    document.getElementById('products').innerHTML = 'حدث خطأ أثناء جلب البيانات.';
+                }
+            };
+            xhr.send();
+
+            var contents = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+            document.getElementById('content').classList.add('active');
+        }
+    </script>
+</body>
+</html>
